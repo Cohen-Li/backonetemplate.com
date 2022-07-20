@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href= "images/favicon.ico">
+	<title>BackOneTemplate</title>
+	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style_opacity.css">
+</head>
+<body>
+	<!-- This is header -->
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-light">
+			<a class="navbar-brand" href="#"><img src="images/Logo.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">HOME </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">PORTFOLIO</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">ABOUT</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="#">CONTACT</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- This is main -->
+	<main>
+		<!-- This is HOME -->
+		<section>
+			<div class="home container-fluid text-center">
+				<h1>We Build <strong>Brand</strong></h1>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+				nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<button>LEAR MORE</button>
+				<br>
+				<a href="#"><img src="images/muiten.png" alt="muiten"></a>
+			</div>
+		</section>
+		<!-- This is PORTFOLIO -->
+		<section>
+			<div class="portfolio container-fluid text-center">
+				<h2>Portfolio</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<button class="active" data="all">All</button>
+				<button data="web-design">WEB DESIGN</button>
+				<button data="graphic-design">GRAPHIC DESIGN</button>
+				<button data="flat-design">FLAT DESIGN</button>
+				<div class="row">
+					<div data="web-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/porpollo-1.jpg" alt="porpollo-1">
+					</div>
+					<div data="web-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/icon_music.jpg" alt="icon_music">
+					</div>
+					<div data="web-design" class="col-lg-3 col-md-3 col-sm-6">
+						<img src="images/banh_rang.jpg" alt="banh_rang">
+					</div>
+					<div data="graphic-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/lay_dau.jpg" alt="lay_dau">
+					</div>
+					<div data="graphic-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/phone.jpg" alt="phone">
+					</div>
+					<div data="flat-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/cham_tron.jpg" alt="cham_tron">
+					</div>
+					<div data="flat-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/porpollo-1.jpg" alt="porpollo-1">
+					</div>
+					<div data="flat-design" class="col-lg-3 col-md-4 col-sm-6">
+						<img src="images/icon_music.jpg" alt="icon_music">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- This is ABOUT -->
+		<section>
+			<div class="about container-fluid text-center">
+				<h2>About Us</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<div class="row">
+					<div class="col-lg-4">
+						<img src="images/woman.jpg" alt="woman">
+						<div class="box-info">
+							<h3>Melannie Doe</h3>
+							<em>Project Manager</em>
+							<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper cipit lobortis nisl	ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<img src="images/man.jpg" alt="man">
+						<div class="box-info">
+							<h3>Melannie Doe</h3>
+							<em>Project Manager</em>
+							<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper cipit lobortis nisl	ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<img src="images/man_1.jpg" alt="man_1">
+						<div class="box-info">
+							<h3>Melannie Doe</h3>
+							<em>Project Manager</em>
+							<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper cipit lobortis nisl	ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- This is CONTACT -->
+		<section>
+			<div class="contact container-fluid">
+				<h2 class="text-center">Contact Us</h2>
+				<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<div class="row">
+					<!-- This is contact left -->
+					<div class="col-lg-6">
+						<form method="POST" action="#">
+							<div class="row">
+								<div class="col-lg-6">
+									<input type="text" name="name" placeholder="Your Name" class="form-control">
+								</div>
+								<div class="col-lg-6">
+									<input type="email" name="email" placeholder="Your Email" class="form-control">
+								</div>
+								<div class="col-lg-12">
+									<textarea name ="message" cols="30" rows="10" placeholder="Your message" class="form-control"></textarea>
+								</div>
+								<div class="col-lg-12 text-right">
+									<button type="submit">SUBMIT</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- This is contact right -->
+					<div class="col-lg-6">
+						<h3>INFORMATION</h3>
+						<address>
+							<i class="fa-solid fa-location-dot"></i>
+							Bak-One Company<br>
+							12345 Hollywood Bvld Street<br>
+							Los Angeles, California
+						</address>
+						<p><i class="fas fa-phone"></i> +444 (Phone) 123456</p>
+						<p><i class="fa-solid fa-fax"></i> +123 (FAX) 0011223</p>
+						<p><i class="fa-solid fa-envelope-circle-check"></i> info@bak-onecompany.com</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- This is footer -->
+	<footer>
+		<div class="container-fluid">
+			<p>© Copyright 2013 Bak-One  |  One Page Flat Template</p>
+			
+		</div>
+		<a href="#" class="back-to-top">
+			<i class="fa-solid fa-arrow-up-from-water-pump"></i>
+		</a>
+	</footer>
+	<!-- This is bootstrap script -->
+	<script src="vendor/jquery-3.6.0.min.js"></script>
+	<script src="vendor/popper.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

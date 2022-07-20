@@ -1,0 +1,403 @@
+/* Reset css */
+
+*, p, h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* Định dạng font */
+
+@font-face {
+	font-family: Lato-Regular;
+	src: url("../font/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+	font-family: Lato-Bold;
+	src: url("../font/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+	font-family: Lato-Italic;
+	src: url("../font/Lato/Lato-Italic.ttf");
+}
+
+@font-face {
+	font-family: Lato-Light;
+	src: url("../font/Lato/Lato-Light.ttf");
+}
+@font-face {
+	font-family: Lato-LightItalic;
+	src: url("../font/Lato/Lato-LightItalic.ttf");
+}
+
+/* Tạo các biến */
+
+:root{
+	--primary-color:  #444;
+	--sencond-color:  #FFF;
+	--third-color: #1bbc9b;
+	--fourth-color:  #16a086;
+	--from-color:  #bec3c7;
+	scroll-behavior: smooth;	/* cho chạy chậm khi click vào back to top */
+}
+
+/* Thiết lập mặc định */
+
+body{
+	max-width: 1020px;
+	margin: auto;
+	color: var(--primary-color);
+	font-family: Lato-Regular;
+	font-size: 14px;
+}
+
+/* Common */
+
+button:not(header button) {
+	font-family: Lato-Bold;
+	letter-spacing: 2px;
+	background-color: var(--third-color);
+	margin-bottom: 43px;
+	border: none;
+	color: var(--sencond-color);
+	padding: 9px 13px;
+}
+
+/* For desktop menu header */
+
+.navbar{
+	padding-top: 19px;
+	padding-bottom: 19px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	font-size: 14px;
+	color: var(--primary-color);
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.navbar-light .navbar-nav .active .nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+	color: var(--sencond-color);
+	background-color: var(--third-color);
+	font-weight: bold;
+}
+
+/* For mobile menu header */
+@media(max-width: 768px){
+.navbar-collapse {
+	position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    background-color: rgba(128, 128, 0, 0.8);
+	}
+
+.navbar-light .navbar-nav .nav-link{
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 3px;
+	}
+
+.navbar{
+	padding-top: 0;
+	padding-bottom: 0;
+	}
+}
+/* End For mobile menu heder*/
+
+/* HOME */
+
+.home{
+	background-image: url(../images/banner.png);
+	background-size: cover;
+	background-position: center;
+	padding-top: 73px;
+	padding-bottom: 83px;
+	text-align: center;
+	color: var(--sencond-color);
+}
+
+.home h1 {
+	font-family: Lato-Light;
+	font-size: 55px;
+	margin-bottom: 30px;
+}
+
+.home h1 strong {
+	font-family: Lato-Bold;
+}
+
+.home p {
+	font-family: Lato-Light;
+	font-size: 18px;
+	max-width: 576px;
+	margin: auto;
+	margin-bottom: 47px;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+	padding-top: 51px;
+	padding-bottom: 28px;
+}
+
+.portfolio h2 {
+	font-size: 28px;
+	margin-bottom: 12px;
+}
+
+.portfolio p {
+	font-size: 16px;
+	margin-bottom: 36px;
+}
+
+.portfolio button {
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-bottom: 45px;
+}
+
+.portfolio button.active {
+	background-color: var(--fourth-color);
+}
+
+.portfolio img{
+	/*margin-bottom: 34px; bỏ khúc thêm nội dung vào hình*/
+}
+
+/* Thêm nội dung vào hình = > khó làm sau*/
+
+.portfolio .box { /* Thêm nội dung vào hình => khó làm sau */
+	position: relative;
+	/*width: 180px;
+	margin: auto;*/
+	margin-bottom: 34px;
+	display: inline-block; /* cho bằng hình bên trong*/
+}
+
+.portfolio .overlay { /* Thêm nội dung vào hình => khó làm sau */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	/*background-color: rgba(8, 129, 105, 0.8);*/
+	background-image: url(../images/hover.png);
+	border-radius: 50%; /* làm cho nó tròn lại */
+	display: flex;	/* nằm ngay giữa hình */
+	justify-content: center;	/* nằm ngay giữa chiều ngang */
+	align-items: center;	/* nằm ngay giữa chiều dọc */
+	color: var(--sencond-color);
+	pointer-events: none;	/* tắt sự kiện con trỏ (hình bàn tay) đẩy xuống hình type(1) */
+	transform: scale(0);	/* Giá trị 0 là không nhìn thấy nó */
+	transition: 2s ease; /* Đi từ trạng thái này sang trạng thái khác mất 0.3 giây, với hiệu ứng ease (chậm nhanh chậm) */
+}
+
+.portfolio .box:hover .overlay {
+	transform: scale(1);	/* Giá trị 1 là nhìn thấy nó */
+}
+
+.portfolio .box .overlay span:nth-of-type(1){	/* Vì dính br nên phải đưa cơ chế lọc vào (:nth-of-type) */
+	width: 43px;
+	line-height: 45px;
+	display: inline-block;
+	color: var(--sencond-color);
+	text-align: center;
+	background-image: url(../images/search.png);
+	border-radius: 50%;
+	font-size: 21px;
+}
+.portfolio .box .overlay span:nth-of-type(2){
+	font-size: 18px;
+	margin-bottom: 8px;
+	display: inline-block; /* xác định margin */
+}
+.portfolio .box .overlay span:nth-of-type(3){
+	font-size: 14px;
+}
+
+/* End thêm nội dung vào hình */
+/* ABOUT */
+
+.about {
+	background-color: var(--fourth-color);
+	padding-top: 53px;
+	padding-bottom: 64px;	/* 74-10 =64 */
+}
+
+.about h2 {
+	font-size: 28px;
+	color: var(--sencond-color);
+	margin-bottom: 11px;
+}
+
+.about > p {
+	font-size: 14px;
+	color: var(--sencond-color);
+	margin-bottom: 40px;
+}
+
+.about .box-info {
+	background-color: var(--sencond-color);
+	width: 220px;
+	margin: auto;
+	padding-top: 18px;
+	padding-bottom: 19px;
+	margin-bottom: 10px;	/* cho khoảng ngăn ra giữa 2 dữ liệu khi zoom xuống mobile*/
+}
+
+.about .box-info h3 {
+	font-size: 28px;
+	padding-bottom: 4px;
+}
+
+.about .box-info em {
+	font-size: 14px;
+	font-family: Lato-Italic;
+	margin-bottom: 18px;
+	display:  inline-block;	  /* Xem chú thích thêm về thẻ em thuộc inline*/
+}
+
+.about .box-info p {
+	font-size: 14px;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Làm các ứng dụng social => Khó làm sau*/
+
+.about .box {
+	position: relative;
+}
+
+.about .box .overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Di chuyển phần tử theo trục x và trục y */
+	width: 180px;
+	line-height: 48px;
+	font-size: 29px;
+	background-image: url(../images/hover.png);
+	display: flex;	/* Canh đều các phần tử*/
+	justify-content: space-evenly; /* Canh đều các phần tử (các chữ)*/
+	opacity: 0;	/* Giá trị 0 là không nhìn thấy nó */
+	transition: 2s ease; /* Đi từ trạng thái này sang trạng thái khác mất 0.3 giây, với hiệu ứng ease (chậm nhanh chậm) */
+}
+.about .box:hover .overlay {
+	opacity: 1;
+}
+.about .box .overlay a {
+	color: var(--sencond-color);
+}
+
+/* End làm các ứng dụng social */
+
+/* CONTACT common */
+
+.contact {
+	padding-top: 49px;
+	padding-bottom: 22px; /* 60 là file thiết kế -42 là của common ra */
+	background-color: #ecf0f1;
+}
+
+.contact h2 {
+	font-size: 28px;
+	margin-bottom: 12px;
+}
+
+.contact > p {
+	font-size: 14px;
+	margin-bottom: 51px;
+}
+
+/* Contact left */
+
+.contact input,
+.contact textarea
+ {
+	border: 2px solid var(--from-color);
+	border-radius: 0;	/* bo tròn 4 góc cho input & textarea*/
+	margin-bottom: 22px;
+}
+.contact input {
+	height: 47px;
+}
+.contact textarea {
+	height: 153px;
+}
+
+.contact ::placeholder {
+	font-size: 14px;
+	font-family: Lato-Italic;
+	color: var(--from-color);
+}
+
+.contact button {
+	padding-left: 29px;
+	padding-right: 29px;
+}
+
+/* CONTACT right */
+
+.contact h3 {
+	font-size: 14px;
+	margin-bottom: 21px;
+}
+
+.contact address {
+	font-size: 14px;
+	margin-bottom: 21px;
+	line-height: 21px;
+	display: flex; /* cho 2 cột chỗ địa chỉ => khó làm sau*/ 
+}
+
+.contact address p {
+	padding-left: 5px; /* cho khoảng cách tới các icon 5px => khó làm sau */
+	margin-top: -5px;	/* cho bằng với icon => khó làm sau */
+}
+.contact address ~ 	p { /* khó làm sau */
+	font-size: 14px;
+	margin-bottom: 17px;
+}
+
+/* FOOTER */
+
+footer {
+	/*line-height: 87px; khi xuống 2 dòng thì báo lỗi làm bung chiều cao 87px*/ 
+	height: 87px;
+	/* center theo chiều dọc */
+	display: flex; /* đi chung với align-item */
+	align-items: center;
+	background-color: #2d3e50;
+	color: var(--sencond-color);
+	font-size: 14px;
+}
+
+/* BACK TO TOP */
+
+footer .back-to-top{
+	line-height: 44px;
+	width: 44px;
+	background-color: var(--third-color);
+	color: var(--sencond-color);
+	text-align: center;
+	position: fixed;
+	bottom: 20px;
+	right: 40px;
+}
+
+/* Click vào chạy tới vùng tương ứng */
+/*
+1. đặt id name cho mỗi section
+2. gắn tên vào chỗ href chừa dấu #
